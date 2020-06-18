@@ -1,4 +1,4 @@
-package page;
+package web_wework.page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -78,4 +78,10 @@ public class BasePage {
         return list;
 
     }
+
+    public void timeout(int timeUnit){
+        driver.manage().timeouts().implicitlyWait(timeUnit, TimeUnit.SECONDS);
+    }
+
+
 }

@@ -1,4 +1,4 @@
-package page;
+package web_wework.page;
 
 
 import org.openqa.selenium.By;
@@ -8,6 +8,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLDecoder;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.CoreMatchers.*;
@@ -53,6 +54,7 @@ public class ContactPage extends BasePage {
 
     public ContactPage search(String keyword){
         sendKeys(By.id("memberSearchInput"), keyword);
+        timeout(5);
 //        driver.findElement(By.id("memberSearchInput")).sendKeys(keyword);
 //        new WebDriverWait(driver, Duration.ofSeconds(10))
 //                .until(ExpectedConditions.elementToBeClickable(delete));
@@ -64,6 +66,7 @@ public class ContactPage extends BasePage {
     }
 
     public ContactPage delete(){
+        timeout(5);
         click(delete);
         click(By.linkText("确认"));
         click(By.id("clearMemberSearchInput"));
